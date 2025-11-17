@@ -1,0 +1,631 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding-top: 80px;
+}
+
+/* Icon styling */
+/* Icon styling: explicit, high-specificity rules so deployment/resets won't enlarge icons */
+img.icon {
+    display: inline-block !important;
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    margin-right: 8px !important;
+    vertical-align: middle !important;
+}
+
+/* Social circular links: keep link container fixed and ensure the inner image fits */
+.social-icon__link {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 35px !important;
+    height: 35px !important;
+    padding: 0 !important;
+}
+
+.social-icon img.icon {
+    width: 18px !important;
+    height: 18px !important;
+    max-width: 18px !important;
+    max-height: 18px !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+}
+
+/*-------------Estilos base-------------*/
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    loading: lazy;
+}
+
+/* Performance: will-change only for animated elements */
+.whatsapp-float {
+    will-change: transform;
+}
+
+.social-icon__link {
+    will-change: transform;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+
+.container--flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column {
+    width: 100%;
+}
+
+/*-------------Estilos header-------------*/
+
+.main-header {
+    width: 100%;
+    margin: -2px;
+    padding: 0px;
+}
+.logo {
+    font-size: 1.8em;
+    color: #DE423A;
+    padding: 10px;
+    font-family: 'Pacifico', cursive;
+    font-weight: 100;
+}
+.main-header__contactInfo__phone {
+    background: #DE423A;
+    color: white;
+    margin: 0 auto;
+    padding: 10px;
+}
+.main-header__contactInfo__address {
+    padding: 10px;
+    margin: 0;
+}
+
+.main-header__contactInfo img.icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+/*-------------Estilos del Menú-------------*/
+.main-nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    padding: 10px;
+    background: rgba(0,0,0,0.9);
+}
+.icon-menu {
+    display: block;
+    color: white;
+    border: 2px solid #DE423A;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.5em;
+    background: rgba(222, 66, 58, 0.1);
+    transition: all 0.3s ease;
+}
+
+.icon-menu:hover {
+    background: #DE423A;
+    border-color: #DE423A;
+    transform: scale(1.05);
+}
+
+.social-icon {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.social-icon__link {
+    text-decoration: none;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 35px !important;
+    height: 35px !important;
+    background: white !important;
+    border-radius: 50% !important;
+    color: black !important;
+    font-size: 1.3em !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+}
+
+.social-icon__link:hover {
+    background-color: #DE423A !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(222, 66, 58, 0.3) !important;
+}
+
+.social-icon i {
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+.menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(20,20,20,0.95) 100%);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    height: 0px;
+    overflow: hidden;
+    transition: height .3s ease-out;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-top: 3px solid #DE423A;
+}
+.menu__item {
+    border-bottom: 1px solid rgba(222, 66, 58, 0.2);
+}
+
+.menu__item:last-child {
+    border-bottom: none;
+}
+
+.menu__link {
+    display: block;
+    padding: 16px 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu__link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #DE423A;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.menu__link:hover {
+    background: rgba(222, 66, 58, 0.15);
+    padding-left: 20px;
+}
+
+.menu__link:hover::before {
+    transform: scaleY(1);
+}
+
+.menu__link--select {
+    background: #DE423A;
+    font-weight: 700;
+}
+
+.menu__link--select::before {
+    transform: scaleY(1);
+}
+
+.mostrar {
+    height: 280px;
+}
+/*-------------Estilos del Banner-------------*/
+
+.banner {
+    margin-top: -55px;
+    position: relative;
+}
+.banner:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    top: 0;
+}
+.banner__img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.banner__content {
+    width: 90%;
+    color: white;
+    text-align: center;
+    position: absolute;
+    z-index: 1500;
+    top: 50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+/*-------------Estilos principales-------------*/
+
+.group--color .container {
+    background: #DE423A;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.main__title {
+    margin: 15px;
+    font-size: 1.8em;
+    font-family: 'Pacifico', cursive;
+    font-weight: 100;
+}
+
+.main__about__description .column:nth-child(2) {
+    padding: 10px;
+}
+.btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+    background: #DE423A;
+    color: white;
+    padding: 10px;
+    margin: 10px auto;
+}
+.group__title{
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-weight: 100;
+    font-size: 1.8em;
+    margin: 30px;
+}
+.today-special .column {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.today-special__img {
+    margin: auto;
+    max-width: 350px;
+}
+.today-special__title {
+    font-size: 1.3em;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.today-special__price {
+    font-size: 1.5em;
+    color: #DE423A;
+    font-weight: bold;
+}
+/*-------------Estilos del footer-------------*/
+.main-footer {
+    background: #222;
+    color: white;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: .8em;
+}
+.copy {
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.main-footer [class*="icon-"] {
+    color: white;
+    text-decoration: none;
+}
+
+.main-footer [class*="icon-"]:before {
+    position: relative;
+    top: 3px;
+    right: 5px;
+}
+
+.main-footer i {
+    color: white;
+    position: relative;
+    top: 3px;
+    right: 5px;
+}
+
+.main-footer img.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+    filter: brightness(0) invert(1);
+}
+
+.column__txt i {
+    margin-right: 8px;
+    color: inherit;
+    width: auto;
+    height: auto;
+    background: none;
+    border-radius: 0;
+    display: inline;
+    font-size: 1em;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #DE423A;
+}
+
+.social-link i {
+    margin-right: 8px;
+}
+
+/*-------------Estilos responsive-------------*/
+
+@media screen and (min-width:480px) {
+    .logo{
+        color:white;
+    }
+    .main-header__contactInfo {
+        text-align: right;
+    }
+    .main-header__contactInfo__phone {
+        background: none;
+    }
+    .main-header__contactInfo__address {
+        color: white;
+    }
+    .main-nav{
+        background: rgba(0,0,0,.85);
+    }
+    .banner {
+        margin-top: -145px;
+        z-index: -1000;
+    }
+    .banner__img {
+        height: 600px;
+    }
+    .banner__content {
+        font-size: 2em;
+    }
+    .main {
+        padding-bottom: 15px;
+    }  
+    .main__about__description .column:nth-child(2) {
+        padding-left: 20px;
+        font-size: .9em;
+    }
+    .main__about__description .btn {
+        margin: 0;
+    }
+    .today-special .column {
+        border: 5px solid #ddd;
+        padding: 5px;
+    }
+    .today-special__img {
+        height: 200px;
+        object-fit: cover;
+    }
+    .main-footer .container--flex{
+        align-items: flex-start;
+    }
+
+    .column--50 {
+        width: 49%;
+    }
+    .column--50-25 {
+        width: 49%;
+    }
+    .column--33 {
+        width: 32%;
+    }  
+}
+
+@media screen and (min-width:768px) {
+    .main__title {
+        font-size: 2.2em;
+    }
+    .main__about__description {
+        margin-top: 30px;
+    }
+    .main__about__description .column--50:nth-child(2) {
+        font-size: 1em;
+    }
+    .main__about__description .column--50:nth-child(2) .column__txt {
+        line-height: 30px;
+    }
+    .column--50-25 {
+        width: 24.5%;
+    }
+    .column__title {
+        font-size: 1em;
+    }
+    .group__title {
+        font-size: 2.2em;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .container {
+        width: 1000px;
+    }
+    .logo {
+        font-size: 2em;
+        padding: 0;
+    }
+    .main-header__contactInfo__phone, .main-header__contactInfo__address {
+        padding-right: 0;
+        font-size: 1.15em;
+    }
+    .main-nav {
+        padding: 0;
+    }
+    .banner__img {
+        height: 700px;
+    }
+    .banner__content {
+        font-size: 2.5em;
+    }
+    .icon-menu {
+        display: none;
+    }
+    .menu {
+        position: static;
+        display: flex;
+        height: auto;
+        width: auto;
+    }
+    .menu__link {
+        padding: 20px;
+    }
+    .group--color .container {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 20px;
+    }
+    .main__title {
+        font-size: 2.3em;
+    }
+    .main__about__description .column--50:nth-child(2) .column__txt {
+        line-height: 45px;
+    }
+    .today-special__title {
+        font-size: 1.4em;
+    }
+    .today-special__price {
+        font-size: 1.8em;
+    }
+    .main-footer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+@media screen and (min-width:1600px) {
+    .container {
+        width: 1400px;
+    }
+    .banner__img {
+        height: 800px;
+    }
+    .main__about__description .column:nth-child(1) img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+    .today-special__img {
+        height: 300px;
+    }
+}
+
+/*-------------WhatsApp Floating Button-------------*/
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background: #20ba58;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+.whatsapp-float:active {
+    transform: scale(0.95);
+}
+
+.whatsapp-float img {
+    width: 35px !important;
+    height: 35px !important;
+    max-width: 35px !important;
+    max-height: 35px !important;
+    margin: 0 !important;
+}
+
+/* Responsive: hide on small mobile, show on medium+ screens */
+@media (max-width: 480px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .whatsapp-float img {
+        width: 28px !important;
+        height: 28px !important;
+        max-width: 28px !important;
+        max-height: 28px !important;
+    }
+}
+
+/*-------------Image Optimization for Mobile-------------*/
+/* Preload priority hints for critical images */
+.banner__img {
+    content-visibility: auto;
+}
+
+/* Reduce quality on slow connections */
+@media (prefers-reduced-data: reduce) {
+    img {
+        opacity: 0.9;
+        filter: blur(0.5px);
+    }
+}
+
+/* Limit image sizes on mobile to reduce rendering overhead */
+@media (max-width: 768px) {
+    .gallery__img,
+    .our-team__img,
+    .today-special__img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 320px) {
+    .whatsapp-float {
+        display: none;
+    }
+}
